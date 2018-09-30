@@ -47,15 +47,23 @@ function addBackGauge(){
             value:document.querySelector('.rightMargin').value,
             direction:'v',
             index:2,
-            inverse:true
+            inverse:true,//需要转为负数
         },
     }
     for(var i in marginObj){
-        alert(marginObj[i].index)
-        // if(marginObj[i].inverse){
-        //     marginObj[i].value=-1*parseInt(marginObj[i].value)
-        //     alert(marginObj[i].value)
-        // }
+        if(marginObj[i].inverse){
+            marginObj[i].value=-1*parseInt(numberCheck(marginObj[i].value))
+        }
     }
     cs.evalScript("addBackGauge('"+ JSON.stringify(marginObj)+"');");
+}
+
+function numberCheck(num,defaultValue){
+    //不是数字转为默认值
+    if(!defaultValue)defaultValue=0;
+    num=Number(num)
+    if(!/^-?[1-9]\d*$/.test(num)){
+        num=defaultValue
+    }
+    return num;
 }
