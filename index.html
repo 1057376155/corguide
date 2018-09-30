@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/guide.css">
+  
+  </head>
+  <body>
+     
+      <div id="guide">
+            <div class="guide_fn_contant common">
+                <button class="addguide" onclick="horizontalHalf()">水平对分</button>
+                <button class="addguide" onclick="verticalHalf()">垂直对分</button>
+                <button class="addguide" onclick="clearGuide()">清空辅助线</button>
+            </div>
+            <div class="guide_fn_contant back_gauge">
+                <div class="guide_fn">
+                    <p>上边距</p>
+                    <input type="text" class="topMargin" placeholder="0">
+                </div>
+                <div class="guide_fn">
+                    <p>下边距</p>
+                    <input type="text" class="bottomMargin" placeholder="0">
+                </div>
+              <div class="guide_fn">
+                    <p>左边距</p>
+                    <input type="text" class="leftMargin" placeholder="0">
+                </div>
+              <div class="guide_fn">
+                    <p>右边距</p>
+                    <input type="text" class="rightMargin" placeholder="0">
+                </div>
+                <button class="addguide" onclick="addBackGauge()">添加边距辅助线</button>
+            </div>
+
+            <div class="guide_fn_contant average">
+                <div class="guide_fn">
+                    <p>横向平均分列</p>
+                    <input type="text" placeholder="0">
+                </div>
+                <div class="guide_fn">
+                    <p>垂直平均分列</p>
+                    <input type="text" placeholder="0">
+                </div>
+                <button class="addguide">平均分列</button>
+            </div>
+
+            <div class="guide_fn_contant back_gauge">
+                    <div class="guide_fn">
+                        <p>行高分列</p>
+                        <input type="text" placeholder="0">
+                    </div>
+                    <div class="guide_fn">
+                        <p>列宽分列</p>
+                        <input type="text" placeholder="0">
+                    </div>
+                    <button class="addguide">分列</button>
+                </div>
+
+            <div class="guide_fn_contant saveGuide">
+                <input type="text" placeholder="填写你需要保存的辅助线名称">
+                <button class="addguide">保存当前的辅助线</button>
+            </div>
+           
+
+      </div>
+      
+  </body>
+  <script type="text/javascript" src="./lib/CSInterface.js"></script>
+  <script type="text/javascript" src="./lib/Vulcan.js"></script>
+  <script type="text/javascript" src="./lib/AgoraLib.js"></script>
+  <script type="text/javascript" src="./js/fn.js"></script>
+</html>
