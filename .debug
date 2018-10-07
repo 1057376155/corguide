@@ -2,8 +2,8 @@
 <ExtensionList>
     <Extension Id="corGuide">
         <HostList>
-            <Host Name="PHXS" Port="8090"/>
-            <Host Name="IDSN" Port="8091"/>
+            <Host Name="PHXS" Port="9090"/>
+            <Host Name="IDSN" Port="9091"/>
         </HostList>
     </Extension>
 </ExtensionList>

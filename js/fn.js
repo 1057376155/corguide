@@ -1,12 +1,13 @@
 var cs = new CSInterface();
-
+var state={
+    relevance:false
+}
 function loadJSX(fileName)
 {
     var extensionRoot = cs.getSystemPath(SystemPath.EXTENSION) + "/lib/";
     cs.evalScript('$.evalFile("' + extensionRoot + fileName + '")');
 }
 loadJSX("json2.js"); //为 ExtendScript 载入 JSON 库
-
 
 
 var horizontalHalf=function(){
@@ -50,6 +51,7 @@ function addBackGauge(){
             inverse:true,//需要转为负数
         },
     }
+    isNullDefault(document.querySelectorAll('.backGaugeInput'));
     for(var i in marginObj){
         if(marginObj[i].inverse){
             marginObj[i].value=-1*parseInt(numberCheck(marginObj[i].value))
@@ -58,6 +60,50 @@ function addBackGauge(){
     cs.evalScript("addBackGauge('"+ JSON.stringify(marginObj)+"');");
 }
 
+function averageSeparation(){
+    //平均分列
+    var average={
+        H_average:{
+            value:numberCheck(document.querySelector(".H_average").value),// 横向分列列数
+        },
+        V_average:{
+            value:numberCheck(document.querySelector(".V_average").value),// 纵向分列列数
+        }
+    }
+    cs.evalScript("averageSeparation('"+ JSON.stringify(average)+"');");
+}
+function unitAddGuide(){
+    //数值分列
+    var unit={
+        lr_unit:{
+            value:numberCheck(document.querySelector(".lr_unit").value),// 横向分列列数
+        },
+        tb_unit:{
+            value:numberCheck(document.querySelector(".tb_unit").value),// 纵向分列列数
+        }
+    }
+    cs.evalScript("unitAddGuide('"+ JSON.stringify(unit)+"');");
+}
+function relevanceFN(){
+    //使值相同
+    var relevanceDOM=document.querySelector('.relevance')
+    if(relevanceDOM.className.split(" ").length<=1){
+        state.relevance=true
+        relevanceDOM.className=relevanceDOM.className+' active'
+    }else{
+        state.relevance=false
+        relevanceDOM.className=relevanceDOM.className.split(" ")[0]
+    }
+}
+function backGaugeInput(e){
+    //如果在同值的情况下触发
+    if(state.relevance){
+        var backGaugeInputs=document.querySelectorAll('.backGaugeInput')
+        for(var i=0;i<backGaugeInputs.length;i++){
+            backGaugeInputs[i].value=e.value
+        }
+    }
+}
 function numberCheck(num,defaultValue){
     //不是数字转为默认值
     if(!defaultValue)defaultValue=0;
@@ -66,4 +112,15 @@ function numberCheck(num,defaultValue){
         num=defaultValue
     }
     return num;
+}
+
+function isNullDefault(DOMs,defaultValue){
+    //如果是非数字就设置默认值
+    if(!defaultValue)defaultValue=0;
+    for(var i=0;i<DOMs.length;i++){
+        DOMs[i].value=parseInt(DOMs[i].value)
+        if(!/^-?[1-9]\d*$/.test(DOMs[i].value)){
+            DOMs[i].value=defaultValue
+        }
+    }
 }

@@ -18,45 +18,48 @@
             <div class="guide_fn_contant back_gauge">
                 <div class="guide_fn">
                     <p>上边距</p>
-                    <input type="text" class="topMargin" placeholder="0">
+                    <input type="text" oninput="backGaugeInput(this)" class="topMargin backGaugeInput" placeholder="空">
                 </div>
                 <div class="guide_fn">
                     <p>下边距</p>
-                    <input type="text" class="bottomMargin" placeholder="0">
+                    <input type="text" oninput="backGaugeInput(this)" class="bottomMargin backGaugeInput" placeholder="空">
                 </div>
               <div class="guide_fn">
                     <p>左边距</p>
-                    <input type="text" class="leftMargin" placeholder="0">
+                    <input type="text" oninput="backGaugeInput(this)" class="leftMargin backGaugeInput" placeholder="空">
                 </div>
               <div class="guide_fn">
                     <p>右边距</p>
-                    <input type="text" class="rightMargin" placeholder="0">
+                    <input type="text" oninput="backGaugeInput(this)" class="rightMargin backGaugeInput" placeholder="空">
                 </div>
-                <button class="addguide" onclick="addBackGauge()">添加边距辅助线</button>
+                <div class="addguide_container">
+                    <span class="relevance" onclick="relevanceFN()">同值</span>
+                    <button class="addguide" onclick="addBackGauge()">添加边距辅助线</button>
+                </div>
             </div>
 
             <div class="guide_fn_contant average">
                 <div class="guide_fn">
-                    <p>横向平均分列</p>
-                    <input type="text" placeholder="0">
+                    <p>左右平均分列</p>
+                    <input class="H_average" type="text" placeholder="空">
                 </div>
                 <div class="guide_fn">
-                    <p>垂直平均分列</p>
-                    <input type="text" placeholder="0">
+                    <p>上下平均分列</p>
+                    <input class="V_average" type="text" placeholder="空">
                 </div>
-                <button class="addguide">平均分列</button>
+                <button class="addguide" onclick="averageSeparation()">平均分列</button>
             </div>
 
-            <div class="guide_fn_contant back_gauge">
+            <div class="guide_fn_contant unitContainer">
                     <div class="guide_fn">
-                        <p>行高分列</p>
-                        <input type="text" placeholder="0">
+                        <p>左右分列</p>
+                        <input class="lr_unit" type="text" placeholder="0">
                     </div>
                     <div class="guide_fn">
-                        <p>列宽分列</p>
-                        <input type="text" placeholder="0">
+                        <p>上下分列</p>
+                        <input class="tb_unit" type="text" placeholder="0">
                     </div>
-                    <button class="addguide">分列</button>
+                    <button class="addguide" onclick="unitAddGuide()">分列</button>
                 </div>
 
             <div class="guide_fn_contant saveGuide">
