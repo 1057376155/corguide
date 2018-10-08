@@ -113,7 +113,9 @@ function numberCheck(num,defaultValue){
     }
     return num;
 }
-
+function goAbout(){
+    cs.openURLInDefaultBrowser("https://github.com/1057376155/corguide")
+}
 function isNullDefault(DOMs,defaultValue){
     //如果是非数字就设置默认值
     if(!defaultValue)defaultValue=0;

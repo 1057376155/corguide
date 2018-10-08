@@ -6,8 +6,8 @@
 
     <ExecutionEnvironment>
         <HostList> <!-- 设置扩展能在 11.0 版本之后 PhotoShop 中运行-->
-            <Host Name="PHXS" Version="[11.0,99.9]"/>
-            <Host Name="PHSP" Version="[11.0,99.9]"/>
+            <Host Name="PHXS" Version="[16.0,99.9]"/>
+            <Host Name="PHSP" Version="[16.0,99.9]"/>
         </HostList>
 
         <LocaleList>
@@ -38,21 +38,21 @@
                     <Menu>corGuide</Menu> <!-- 设置扩展标题-->
                     <Geometry>
                         <Size>  <!-- 设置扩展面板尺寸-->
-                            <Height>500</Height>
+                            <Height>385</Height>
                             <Width>300</Width>
                         </Size>
                         <MaxSize>
-                            <Height>550</Height>
+                            <Height>385</Height>
                             <Width>300</Width>
                         </MaxSize>
                         <MinSize>
-                            <Height>550</Height>
+                            <Height>385</Height>
                             <Width>300</Width>
                         </MinSize>
                     </Geometry>
                     <Icons>  <!-- 设置扩展面板尺寸-->
-                        <Icon Type="Normal">./img/icon1.png</Icon>
-                        <Icon Type="DarkNormal">./img/icon1.png</Icon>
+                        <Icon Type="Normal">./img/logo.png</Icon>
+                        <Icon Type="DarkNormal">./img/logo.png</Icon>
                     </Icons>
                 </UI>
 

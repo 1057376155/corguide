@@ -134,6 +134,7 @@ function averageUnitAddGuide(o){
         o.start=o.start+o.step
     }
 }
+
 var clearGuide=function(){
     //清除辅助线
     app.activeDocument.guides.removeAll();
@@ -149,7 +150,6 @@ function addGuide(d,num){
     if(!num||isNaN(num))num=0
     app.activeDocument.guides.add(directionType[d],UnitValue(num+"px"))
 }
-
 
 function isError(str){
     //判断是否有这个属性
