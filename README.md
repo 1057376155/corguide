@@ -25,6 +25,7 @@
 
 优先级别 选区>选中图层
 
+<<<<<<< HEAD
 ![avatar](./Screenshots/4.gif)
 
 安装教程 
@@ -38,3 +39,6 @@ CC 2015.5：HKEY_CURRENT_USER\Software\Adobe\CSXS.7
 添加 字符串值 项 PlayerDebugMode，将值设置为 1
 
 window 64位 把文件(可以删除Screenshots文件夹)拷贝到  C:\Program Files (x86)\Common Files\Adobe\CEP\extensions
+=======
+![avatar](./Screenshots/4.gif)
+>>>>>>> 25038e9170dda9f2daf53fc0bbf892236af6d08e
