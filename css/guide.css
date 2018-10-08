@@ -118,3 +118,10 @@
     /* background: #002b63; */
     border: #0014c5 solid 1px;
 }
+.about{
+    font-size: 14px;
+    text-align: center;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+}
